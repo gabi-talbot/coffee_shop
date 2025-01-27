@@ -1,11 +1,14 @@
 venv/
 .venv/
-.vscode/
 __pycache__/
 test.db
 
 # IDE
 .idea/
+.vscode/
+
+# environment
+.env
 
 # OS generated files #
 ######################

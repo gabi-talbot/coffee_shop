@@ -3,11 +3,17 @@ from flask import request, _request_ctx_stack
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-AUTH0_DOMAIN = 'udacity-fsnd.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'dev'
+
+
+AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
+ALGORITHMS = [os.getenv("ALGORITHMS")]
+API_AUDIENCE = os.getenv("API_AUDIENCE")
 
 ## AuthError Exception
 '''
