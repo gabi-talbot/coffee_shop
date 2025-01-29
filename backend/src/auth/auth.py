@@ -161,7 +161,9 @@ def verify_decode_jwt(token):
                 'description': 'Token expired.'
             }, 401)
 
-        except exceptions.JWTClaimsError:
+        except exceptions.JWTClaimsError as e:
+            print(e)
+            print(jwt.get_unverified_claims(token))
             raise AuthError({
                 'code': 'invalid_claims',
                 'description': 'Incorrect claims. Please, check the audience and issuer.'
